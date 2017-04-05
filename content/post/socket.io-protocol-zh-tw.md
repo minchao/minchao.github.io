@@ -51,7 +51,7 @@
 
 ### Packet
 
-每個封包都代表一個 vanilla `Object`，且含有一個 `nsp` 鍵值表示它屬於哪一個命名空間 (namespace) (參考 "Multiplexing" 多路傳輸)，
+每個封包都代表一個 vanilla `Object` (譯註：[plain vanilla][0])，且含有一個 `nsp` 鍵值表示它屬於哪一個命名空間 (namespace) (參考 "Multiplexing" 多路傳輸)，
 與一個 `type` 鍵值，它可以是下列幾種類型之一：
 
   - `Packet#CONNECT` (`0`)
@@ -125,3 +125,5 @@ Socket.IO 具有內建的多路傳輸支援．表示每個封包都屬於某個 
 ## License
 
 MIT
+
+[0]: https://en.wikipedia.org/wiki/Plain_vanilla
