@@ -1,5 +1,11 @@
 # Filter on input, escape on output
 
+- Input
+  - Filter/Sanitizer
+  - Validation
+- Output
+  - Escape out data
+
 ## 參考資料
 
 * [Why escape-on-input is a bad idea](https://lukeplant.me.uk/blog/posts/why-escape-on-input-is-a-bad-idea/)
