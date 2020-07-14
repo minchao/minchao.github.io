@@ -60,7 +60,7 @@ func TestDownload(t *testing.T) {
 
 執行測試
 
-```shell
+```console
 $ go test -v
 === RUN   TestDownload
 --- PASS: TestDownload (3.96s)
@@ -145,7 +145,7 @@ func TestDownload(t *testing.T) {
 
 執行測試
 
-```shell
+```console
 $ go test -v
 === RUN   TestDownload
 --- PASS: TestDownload (3.22s)
@@ -329,7 +329,7 @@ func ExampleDecoder() {
 
 測試失敗範例：
 
-```shell
+```console
 $ go test -v -run="ExampleSendJSON"
 === RUN   ExampleSendJSON
 --- FAIL: ExampleSendJSON (0.00s)
@@ -419,7 +419,7 @@ ok      github.com/goinaction/code/chapter9/listing28   1.257s
 
 執行所有測試
 
-```shell
+```console
 go test -v -run="none" -bench=.
 goos: darwin
 goarch: amd64
@@ -433,7 +433,7 @@ ok      github.com/goinaction/code/chapter9/listing28   4.192s
 
 觀察記憶體分配大小及次數
 
-```shell
+```console
 $ go test -v -run="none" -bench=. -benchmem
 goos: darwin
 goarch: amd64
@@ -454,7 +454,7 @@ Data races 是並行系統中最常見也最年除錯的錯誤類型之一。當
 
 使用 `-race` 參數自動偵測 data race
 
-```shell
+```console
 $ go test -race mypkg    // test the package
 $ go run -race mysrc.go  // compile and run the program
 $ go build -race mycmd   // build the command
@@ -470,13 +470,13 @@ $ go install -race mypkg // install the package
 
 執行測試並紀錄覆蓋率
 
-```shell
+```console
 $ go test -coverprofile=coverate.out
 ```
 
 顯示測試覆蓋率
 
-```shell
+```console
 $ go tool cover -html=coverate.out
 PASS
 coverage: 42.9% of statements
@@ -509,7 +509,7 @@ Golang 支援多種性能分析方式，每一種關注不同的面向，例如�
 
 收集並顯示 CPU profile
 
-```shell
+```console
 $ go test -run=none -bench=ClientServerParallelTLS64 \
     -cpuprofile=cpu.log net/http
 PASS
@@ -518,7 +518,7 @@ BenchmarkClientServerParallelTLS64-8  1000
 ok      net/http       3.395s
 ```
 
-```shell
+```console
 $ go tool pprof -text -nodecount=10 ./http.test cpu.log
 2570ms of 3590ms total (71.59%)
 Dropped 129 nodes (cum <= 17.95ms)
