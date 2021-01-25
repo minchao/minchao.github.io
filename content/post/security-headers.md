@@ -5,7 +5,7 @@
 ### Content-Security-Policy (CSP)
 
 - [MDN - Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)
-- [Content Security Policy (CSP)Quick Reference Guide](https://content-security-policy.com/)
+- [Content Security Policy (CSP) - Quick Reference Guide](https://content-security-policy.com/)
 
 ### Strict-Transport-Security
 
