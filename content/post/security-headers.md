@@ -42,4 +42,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection
 - [Security Headers](https://securityheaders.com/)
 - Google [CSP Evaluator](https://csp-evaluator.withgoogle.com/)
 - Mozilla [Observatory](https://observatory.mozilla.org)
+- [RapidSec CSP Scanner](https://cspscanner.com/) - Get a full analysis of your Content-Security-Policy, and understand how to easily improve it.
+- [RapidSec Security Scanner](https://rapidsec.com/analyze) - Get a full analysis of your security status and required improvements.
+- [Content Security Policy (CSP) Validator](https://cspvalidator.org/#url=https://cspvalidator.org/)
 - [HELMET](https://github.com/helmetjs/helmet) - Express.js security with HTTP headers.
