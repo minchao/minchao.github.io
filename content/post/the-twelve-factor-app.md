@@ -15,10 +15,11 @@ One codebase tracked in revision control, many deploys
 
 :::info
 常見的環境分類：
-  - Local - 開發環境
-  - Development - 測試環境
-  - Staging - 預發布環境
-  - Production - 線上產品環境
+
+- Local - 開發環境
+- Development - 測試環境
+- Staging - 預發布環境
+- Production - 線上產品環境
 :::
 
 ## II. Dependencies
@@ -35,8 +36,8 @@ Explicitly declare and isolate dependencies
 系統工具依賴如何管理？
 
 - IaC，如
-  -  [AWS Cloud Development Kit](https://github.com/aws/aws-cdk)
-  -  [Puppet](https://github.com/puppetlabs/puppet)
+  - [AWS Cloud Development Kit](https://github.com/aws/aws-cdk)
+  - [Puppet](https://github.com/puppetlabs/puppet)
 - Docker image
 - 程式語言的依賴管理工具
   - 例如 PHP 的 composer.json 可以聲明程式依賴的 PHP extensions
@@ -124,8 +125,7 @@ Scale out via the process model
   - Crashed process
   - User-initiated restart and shutdown
     - Graceful shutdown
-
-
+  
 ## IX. Disposability
 
 Maximize robustness with fast startup and graceful shutdown

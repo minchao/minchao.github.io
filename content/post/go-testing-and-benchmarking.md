@@ -455,10 +455,10 @@ Data races 是並行系統中最常見也最年除錯的錯誤類型之一。當
 使用 `-race` 參數自動偵測 data race
 
 ```console
-$ go test -race mypkg    // test the package
-$ go run -race mysrc.go  // compile and run the program
-$ go build -race mycmd   // build the command
-$ go install -race mypkg // install the package
+go test -race mypkg    // test the package
+go run -race mysrc.go  // compile and run the program
+go build -race mycmd   // build the command
+go install -race mypkg // install the package
 ```
 
 > 更多資訊請參考：
@@ -471,7 +471,7 @@ $ go install -race mypkg // install the package
 執行測試並紀錄覆蓋率
 
 ```console
-$ go test -coverprofile=coverate.out
+go test -coverprofile=coverate.out
 ```
 
 顯示測試覆蓋率
@@ -486,7 +486,6 @@ ok      size    0.026s
 ![](https://i.imgur.com/I72fJFs.png)
 
 > 執行後將開啟一瀏覽器視窗，綠色表示已覆蓋，紅色表示未覆蓋，而灰色表示未經檢測
-
 > 更多資訊請參考 [The cover story](https://blog.golang.org/cover)
 
 ### Heat maps
@@ -540,7 +539,6 @@ Showing top 10 nodes out of 166 (cum >= 60ms)
 - 參數 `-nodecount=10` 限制輸出結果的數量為 10 個
 
 > 如果需要使用 pprof 的圖形功能，請安裝 [GraphViz](http://www.graphviz.org) 工具
-
 > 更多資訊請參考 [Profiling Go Programs](https://blog.golang.org/profiling-go-programs)
 
 ## 參考資料

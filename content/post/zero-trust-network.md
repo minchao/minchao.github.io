@@ -1,5 +1,4 @@
 ---
-title: Zero Trust Network
 tags: zero-trust-network
 slideOptions:
   transition: slide
@@ -18,7 +17,7 @@ slideOptions:
 
 Note:
 > 起源 2010，BeyondCorp 2014。
-> 除了 Google、Netflex，各雲端平台已經在使用零信任的概念，AWS IAM、GCP Identity-Aware Proxy。
+> 除了 Google、Netflix，各雲端平台已經在使用零信任的概念，AWS IAM、GCP Identity-Aware Proxy。
 > 甚至還有許多現成的商業[解決方案](https://www.g2.com/categories/zero-trust-networking)
 
 ---
@@ -48,7 +47,7 @@ Note:
 
 Note:
 > 每個區域都被授與不同層度的信任，例如公司內的網路被分為放置 Load blancer 的 DMZ、App server 的信任環境與敏感資源的特權環境，作為邊界的防火牆決定了哪些資源允許被訪問。
-> 
+>
 > 說明 [Demilitarized zone (DMZ)](https://en.wikipedia.org/wiki/DMZ_(computing))，後面攻擊手法會介紹怎麼繞過。
 
 ---
@@ -75,7 +74,8 @@ Note:
 - 當網路開始變大或區分不同等級的信任，我們會將網路切割出更小的子網路。
 - 假設特定使用者和服務之間存在精確的邊界。
 
-Note:
+> Note:
+>
 > - 網路內的服務間彼此溝通時會使用 HTTP 或某種 RPC，但通常流量沒有經過加密、身份及授權驗證，因為我們預設信任網路內的服務。舉例。
 > - 當網路開始變大，或新增不同的信任等級（例如切分產品及測試環境），我們會開始將網路分段為更小的子網路，並在子網路間透過防火牆過濾。
 >
@@ -151,8 +151,7 @@ Note:
 - 安全策略應該是動態的，並基於盡可能多的資料來源計算而來
 
 Note:
-> 零信任反思傳統安全架構不足，基於以下假定來建立安全防護機制。
-首先，網路永遠處在危險的環境之中，且這些危險來源不分內外。
+> 零信任反思傳統安全架構不足，基於以下假定來建立安全防護機制。 首先，網路永遠處在危險的環境之中，且這些危險來源不分內外。
 >
 > 裝置 IP 位置與所在網路不再決定其是否可被信任。取得代之，所有的使用者、裝置與網路流量都應該經過嚴格的認證和細粒度的授權控制，才可以訪問受保護的資源。
 >
@@ -169,7 +168,7 @@ Control plane 支撐整個系統的身份驗證與授權檢查
 
 Note:
 > 這張圖呈現的是應用零信任網路建構的網路安全架構，我們可以看到畫面上方是支撐整個系統的 [Control plane](https://en.wikipedia.org/wiki/Control_plane)（控制平面/層），而其它部分稱為 [Data plane](https://en.wikipedia.org/wiki/Data_plane)（資料平面/層）。
-> 
+>
 > Control plane 與 Data plane 是網路系統經常使用的概念，Control plane - 相當於網路裝置的大腦，用來配置管理網路裝置。
 >
 > 大腦、神經、四肢。
@@ -183,7 +182,7 @@ Note:
 
 Note:
 > Data plane - 負責轉發流量。
-> 
+>
 > 例如遠端工作的員工，想訪問 Private service 或 Secure gateway 背後的 Legacy service。首先會經過 Control plane，其確保請求會經過認證身分與檢查授權，只有當請求具備合法的授權，才會允許 Data plane 接受請求，訪問受保護的資源。
 
 ---
@@ -226,7 +225,7 @@ Note:
 
 Note:
 > Network Agent 是請求發起者屬性的一個集合，通常包含使用者、裝置與應用程式這三類實體。傳統上這些實體會被單獨授權（譬如授權某個使用者訪問），但零信任網路中，授權策略是基於這三種實體的屬性來制定，以有效對抗憑證遭竊取等安全威脅。
-> 
+>
 > 例子，手機、App、使用者。
 
 ---
@@ -249,7 +248,7 @@ Enforcement（策略執行組件）
 
 Note:
 > 首先 Enforcement 是整個零信任網路中最常見的，會大量部署在系統，直接影響授權決策的結果，所以它的位置非常重要，應該盡可能靠近 Data plane 網路流量。
-> 
+>
 > 類比執行法律的執法人員。
 
 ---
@@ -271,7 +270,7 @@ Policy engine（策略引擎）
 
 Note:
 > Policy engine 會根據事先定好的策略，並參考 Trust engine 的各種數據來完成授權決策。
-> 
+>
 > 已經有一些現成的選擇，例如 [Open Policy Agent (OPA)](https://www.openpolicyagent.org/)。
 
 ---
@@ -303,7 +302,7 @@ Data stores（資料儲存系統）
 
 Note:
 > 而圖片最上面的 Data stores 就是是實際存放授權決策所依據的策略與數據的地方。
-> 
+>
 > 推薦使用 Git 來儲存 Policies，讓變更可以被追蹤，甚至重建回某一時間點的狀態。
 
 ---
@@ -346,7 +345,8 @@ Note:
 - 即使在應用層也可以建立安全防護機制
 
 Note:
-> 從邊界安全模型轉移到零信任模型，工程浩大非常不易，因為零信任網路不是一種技術，而是一種安全策略，不應該期待採用某一個解決方案後就可以直接轉換，應該視企業內部的架構，採逐步補強的方式，來填補傳統邊界安全模型中不足的部分。
+> 從邊界安全模型轉移到零信任模型，工程浩大非常不易，因為零信任網路不是一種技術，而是安全策略。
+> 不應該期待採用某一個解決方案後就可以直接轉換，應該視企業內部的架構，採逐步補強的方式，來填補傳統邊界安全模型中不足的部分。
 
 ---
 
